@@ -17,13 +17,35 @@
       "top": -19.24,
       "left": 7.03,
       "attrs": { "color": "red" }
-    }
+    },
+    {
+      "type": "wokwi-membrane-keypad",
+      "id": "keypad1",
+      "top": -21.2,
+      "left": -282.4,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 92.8,
+      "left": 312.8,
+      "attrs": { "pins": "i2c" }
+    },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -47.7, "left": 330.6, "attrs": {} }
   ],
   "connections": [
     [ "pico:GP2", "sevseg1:CLK", "green", [ "v-127.44", "h-81.7" ] ],
     [ "pico:GP3", "sevseg1:DIO", "green", [ "v0" ] ],
     [ "sevseg1:VCC", "pico:3V3", "red", [ "h105.6", "v192", "h-62.3" ] ],
-    [ "sevseg1:GND", "pico:GND.1", "black", [ "h0" ] ]
+    [ "sevseg1:GND", "pico:GND.1", "black", [ "h0" ] ],
+    [ "keypad1:R1", "pico:GP16", "green", [ "v19.2", "h182.4", "v-115.2", "h81.7" ] ],
+    [ "keypad1:R2", "pico:GP17", "green", [ "v28.8", "h182", "v-115.2", "h81.7" ] ],
+    [ "keypad1:R3", "pico:GP18", "green", [ "v38.4", "h182.1", "v-115.2", "h91.3" ] ],
+    [ "keypad1:R4", "pico:GP19", "green", [ "v48", "h182.2", "v-115.2", "h91.3" ] ],
+    [ "keypad1:C1", "pico:GP20", "green", [ "v57.6", "h182.3", "v-115.2", "h91.3" ] ],
+    [ "keypad1:C2", "pico:GP21", "green", [ "v67.2", "h182.4", "v-115.2", "h91.3" ] ],
+    [ "keypad1:C3", "pico:GP22", "green", [ "v76.8", "h182.25", "v-115.2", "h100.9" ] ]
   ],
   "dependencies": {}
 }
