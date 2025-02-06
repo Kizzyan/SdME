@@ -36,6 +36,7 @@ set(PICO_BOARD pico_w CACHE STRING "Board type")
 add_executable(Projeto-Final 
     Projeto-Final.c        # Main project file
     tm1637/tm1637.c        # Source file for tm1637 library
+    lcd1602/lcd1602.c      # Source file for tm1637 library
 )
 
 # Set program name and version (use the same case as in add_executable)
@@ -45,11 +46,13 @@ pico_set_program_version(Projeto-Final "0.1")
 # Include the directory containing tm1637.h
 target_include_directories(Projeto-Final PRIVATE
     ${CMAKE_CURRENT_LIST_DIR}/tm1637
+    ${CMAKE_CURRENT_LIST_DIR}/lcd1602
 )
 
 # Link libraries required by the project
 target_link_libraries(Projeto-Final
     pico_stdlib    # Standard Pico SDK library
+    hardware_i2c   # Standard Pico SDK library
 )
 
 # Enable additional outputs (e.g., UF2, hex, bin)
